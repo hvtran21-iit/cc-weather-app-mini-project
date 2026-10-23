@@ -27,3 +27,14 @@ Solution: move the python file into /lab06/testing/ and run from inside the /tes
 4. **Permission denied when attempting to access weather journal.**
 
 Workaround, add .pem keypair to the repository for lab purposes, but ensure that .gitignore has *.pem included so the keypair is not visible in the repo. Remove the keypair.pem file from the repo before committing as a safeguard.
+
+5. **The itmo-444-544-uploader-role persists after ./delete_weather_stack.sh and ./delete_database.sh execution.**
+
+I had to ask AI to help me resolve this issue. Use the commands below at your own risk, and double check before execution.
+
+```
+aws iam delete-role-policy --role-name itmo-444-544-uploader-role --policy-name uploader-put-only
+aws iam remove-role-from-instance-profile --instance-profile-name itmo-444-544-uploader-profile --role-name itmo-444-544-uploader-role 2>/dev/null || true
+aws iam delete-instance-profile --instance-profile-name itmo-444-544-uploader-profile 2>/dev/null || true
+aws iam delete-role --role-name itmo-444-544-uploader-role
+```
