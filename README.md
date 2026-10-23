@@ -9,3 +9,10 @@
 - Troubleshooted IAM user permission problems
 
 ### Troubleshooting -- Issues I encountered during implementation
+
+Note: API key does not start with Aiza anymore; rather, it starts with AQ.
+
+1. Lab instructions does not mention which Gemini model to choose.
+  a. I chose gemini-3.5-flash-lite for cost effectiveness. Set it with export GEMINI_MODEL="gemini-3.5-flash-lite".
+2. IAM Lab user keeps getting implicitly denied from SSM and RDS.
+  a. Add AWS managed permissions to save on customer inline policy limit (max of 2048 bytes): add DynamoDB, EC2FullAccess, RDSFullAccess, SSMFullAccess, AutoScalingFullAccess, IAMFullAccess.
