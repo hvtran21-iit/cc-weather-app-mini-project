@@ -15,8 +15,8 @@ Note: API key does not start with Aiza anymore; rather, it starts with AQ.
 1. **Lab instructions does not mention which Gemini model to choose.**
   a. I chose gemini-3.5-flash-lite for cost effectiveness. Set it with export GEMINI_MODEL="gemini-3.5-flash-lite".
 2. **IAM Lab user keeps getting implicitly denied from SSM and RDS.**
-  a. Add AWS managed permissions to save on customer inline policy limit (max of 2048 bytes): add DynamoDB, EC2FullAccess, RDSFullAccess, SSMFullAccess, AutoScalingFullAccess, IAMFullAccess.
-3. **Python3 app_smoke_test.py fails.**
-  a.	Solution: move the python file into /lab06/testing/ and run from inside the /testing/ directory, since ../stack_outputs.env is within the /lab06/ directory and not within the root (/) directory.
-4. **Permission denied when attempting to access weather journal.**
-  a. Workaround, add .pem keypair to the repository for lab purposes, but ensure that .gitignore has *.pem included so the keypair is not visible in the repo. Remove the keypair.pem file from the repo before committing as a safeguard.
+  3. a. Add AWS managed permissions to save on customer inline policy limit (max of 2048 bytes): add DynamoDB, EC2FullAccess, RDSFullAccess, SSMFullAccess, AutoScalingFullAccess, IAMFullAccess.
+4. **Python3 app_smoke_test.py fails.**
+  5. a.	Solution: move the python file into /lab06/testing/ and run from inside the /testing/ directory, since ../stack_outputs.env is within the /lab06/ directory and not within the root (/) directory.
+6. **Permission denied when attempting to access weather journal.**
+  7. a. Workaround, add .pem keypair to the repository for lab purposes, but ensure that .gitignore has *.pem included so the keypair is not visible in the repo. Remove the keypair.pem file from the repo before committing as a safeguard.
